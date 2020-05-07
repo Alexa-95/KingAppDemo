@@ -1,0 +1,1 @@
+define("bundles/kingapppage/js/search/hitCount",["jquery","bundles/kingapppage/js/search/search","bundles/kingappcommon/js/select2"],function(e,n){var t={change:function(){t.url&&e.get(t.url+n()).done(function(n){e(".hit-count").text(n.total),e("body").trigger("page.searchHit",[n.total])})},set:function(e){this.url=e}};return t});

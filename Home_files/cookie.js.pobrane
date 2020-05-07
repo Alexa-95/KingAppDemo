@@ -1,0 +1,1 @@
+define("bundles/kingapppage/js/cookie",["jquery","jquery-cookie"],function(e){"use strict";var o=e(".page-frontend-cookie");e.cookie("regulations")||(o.show(),o.on("click","button",function(){e.cookie("regulations","socialqueencookie",{expires:365,path:"/"}),o.hide()}))});

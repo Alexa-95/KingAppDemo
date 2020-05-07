@@ -1,0 +1,1 @@
+define("bundles/kingappcommon/js/formatter",["jquery"],function(n){"use strict";function o(){}return n("body").on("format",o),o});

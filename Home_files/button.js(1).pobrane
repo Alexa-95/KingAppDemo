@@ -1,0 +1,1 @@
+define("bundles/kingapppage/js/button",["jquery"],function(t){"use strict";return function(e,n){t(e).on("click",function(e){e.preventDefault(),t(n.target)[n.type](),t(e.target).toggleClass("active")})}});

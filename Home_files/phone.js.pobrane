@@ -1,0 +1,1 @@
+define("bundles/kingappclient/js/phone",["jquery"],function(){function n(n){var t=$(n.currentTarget).data("url"),r="."+$(n.currentTarget).data("target");$.post({url:t,container:$(n.currentTarget).parent()}).done(function(n){$(r).html(n.data)})}return function(){$(".show-button-js").on("click",n)}});
