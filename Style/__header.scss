@@ -1,0 +1,123 @@
+.page-head.page-frontend-page-header {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  color: $textHeader;
+  .widget-inner.cols-1 {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    height: 100px;
+
+    .common-frontend-logo{
+      margin-right: auto;
+      margin-left: 25px;
+    }
+
+    .page-frontend-menu {
+      width: 100%;
+      margin-left: 200px;
+      
+      ul {
+        display: flex;
+        .__item {
+          padding: 20px;
+        }
+      }
+    }
+    .social-frontend-contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      margin: auto 25px;
+      > .facebook,
+      > .instagram,
+      > .youtube {
+        display: block;
+        height: 28px;
+        width: 28px;
+        padding: 0 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        span {
+          font-size: 0px;
+        }
+      }
+      > .facebook {
+        background-image: url("../Images/iconFb.png");
+      }
+      > .instagram {
+        background-image: url("../Images/iconIns.png");
+      }
+      > .youtube {
+        background-image: url("../Images/iconTw.png");
+      }
+    }
+
+    .language-frontend-language-switch {
+      .language-language {
+        .select2-hidden-accessible {
+          // border: none;
+        }
+      }
+    }
+    .page-frontend-grid {
+      .account-frontend-logged-user {
+        margin: auto 45px;
+        width: max-content;
+        .linkToLogin,
+        .linkToRegister {
+          padding: 10px;
+          font-size: 16px;
+          font-weight: 600;
+          color: $textHeader;
+        }
+        &:after {
+          content: "/";
+          position: absolute;
+          left: 50%;
+        }
+      }
+      .basket-frontend-bill{
+        position: relative;
+        background-color: $detailsColorBasket;
+        width: 95px;
+        height: 100%;
+        background-image: url("../Images/basket.png");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:after{
+          content: attr(data-type);
+          position: absolute;
+          right: 20%;
+          top: 20%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 29px;
+          height: 29px;
+          border-radius: 100%;
+          background-color: $detailsColor;
+          color: #fff;
+          font-size: 12px;
+          
+        }
+
+      }
+    }
+  }
+
+  //TODO - O CHUJ W TYM CHODZI?
+  .basket-container-top.page-frontend-grid{
+    display: none;
+  }
+}

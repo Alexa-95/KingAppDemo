@@ -1,0 +1,28 @@
+/*
+    VARIABLES
+*/
+//Font family
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap&subset=latin-ext");
+$fontFamily: "Montserrat", sans-serif;
+
+//Colors
+$bgrColor: #000;
+$bgrColorExtraLighter: #444343;
+$bgrColorExtraDarker: #242323;
+
+$textColor: #2e2d2d;
+$textColorExtra: #a2a1a1;
+$textHeader: #060606;
+
+$detailsColor: #ff5260;
+$detailsColorExtra: #f70909;
+$detailsColorBasket: #231f20;
+
+$borderColor: #c9c7c8;
+
+//Breakpoints for media queries
+$breakpointXS: 0px;
+$breakpointSM: 600px;
+$breakpointMD: 960px;
+$breakpointLG: 1280px;
+$breakpointXL: 1920px;
