@@ -56,6 +56,11 @@
                   &.tr-full-name-and-surname {
                     font-weight: 500;
                     line-height: 34px;
+
+                    span.display-name{
+                      display: block;
+                      padding-bottom: 10px;
+                    }
                   }
                 }
               }
