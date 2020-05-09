@@ -14,7 +14,7 @@
     flex-direction: row;
     height: 100px;
 
-    .common-frontend-logo{
+    .common-frontend-logo {
       margin-right: auto;
       margin-left: 25px;
     }
@@ -22,7 +22,7 @@
     .page-frontend-menu {
       width: 100%;
       margin-left: 200px;
-      
+
       ul {
         display: flex;
         .__item {
@@ -64,8 +64,25 @@
 
     .language-frontend-language-switch {
       .language-language {
-        .select2-hidden-accessible {
-          // border: none;
+        > span {
+          display: none;
+        }
+        > select {
+          appearance: none;
+          background-image: url("../Images/arrow.png");
+          background-repeat: no-repeat;
+          background-position-x: 100%;
+          background-position-y: center;
+          width: 50px;
+          border: none;
+          outline: none;
+          font-size: 16px;
+          font-weight: 600;
+
+          option{
+             background-color: $bgrColorExtraLighter;
+             color: #fff;
+          }
         }
       }
     }
@@ -86,7 +103,7 @@
           left: 50%;
         }
       }
-      .basket-frontend-bill{
+      .basket-frontend-bill {
         position: relative;
         background-color: $detailsColorBasket;
         width: 95px;
@@ -95,7 +112,7 @@
         background-position: center;
         background-repeat: no-repeat;
 
-        &:after{
+        &:after {
           content: attr(data-type);
           position: absolute;
           right: 20%;
@@ -109,15 +126,13 @@
           background-color: $detailsColor;
           color: #fff;
           font-size: 12px;
-          
         }
-
       }
     }
   }
 
   //TODO - O CHUJ W TYM CHODZI?
-  .basket-container-top.page-frontend-grid{
+  .basket-container-top.page-frontend-grid {
     display: none;
   }
 }

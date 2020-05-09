@@ -6,10 +6,29 @@
   font-weight: 500;
   color: $textHeader;
 
+  .widget-inner.cols-1 {
+    display: flex;
+    flex-direction: column;
+
+    #category {
+      order: 3;
+      margin-left: 10px;
+
+      [data-level="1"] {
+        border-bottom: none;
+        &:last-child {
+          border-bottom: 1px solid $borderColor;
+        }
+      }
+    }
+  }
+
   .page-frontend-search-filter-query {
+    order: 1;
     display: flex;
     position: relative;
     margin: 15px auto;
+    width: 100%;
     input#search_query {
       border: none;
       outline: none;
@@ -40,42 +59,79 @@
       background-size: contain;
     }
   }
-  .page-frontend-button{
-      a{
-        display: flex;
-        justify-content: space-between;
-          &:after{
-              content: '';
-              display: block;
-              background-image: url('../Images/arrow.png');
-              background-size: contain;
-              background-repeat: no-repeat;
-              width: 12px;
-              height: 8px;
-              transition: all .2s linear;
-              transform: rotate(180deg);
-            }            
-            &.active{
-                &:after{
-                    transform: rotate(0deg);
-                }
-
-            }
+  .page-frontend-button {
+    order: 2;
+    a {
+      display: flex;
+      justify-content: space-between;
+      &:after {
+        content: "";
+        display: block;
+        background-image: url("../Images/arrow.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 12px;
+        height: 8px;
+        transition: all 0.2s linear;
+        transform: rotate(180deg);
+      }
+      &.active {
+        &:after {
+          transform: rotate(0deg);
         }
+      }
+    }
   }
-  .category-frontend-tree{
-      [data-level="0"]{
-        padding: 10px 0;
-          
+  .category-frontend-tree {
+    order: 4;
+    [data-level="0"] {
+      padding: 10px 0;
+      a,
+      span {
+        display: block;
+        padding: 5px 0;
+        font-size: 22px;
       }
-      [data-level="1"]{
-          padding: 10px 0;
-          border-bottom: 1px solid $borderColor;
-          
+    }
+    [data-level="1"] {
+      border-bottom: 1px solid $borderColor;
+      padding: 10px 0;
+      a,
+      span {
+        font-size: 16px;
       }
-      [data-level="2"]{
-          margin-left: 20px;
-          
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        a {
+          display: flex;
+          justify-content: space-between;
+
+          &:after {
+            content: "";
+            display: block;
+            background-image: url("../Images/arrow.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 8px;
+            margin: 0 10px;
+            transition: all 0.2s linear;
+          }
+        }
       }
+      &:last-child {
+        a{
+          color: $detailsColorExtra;
+        }
+      }
+    }
+    [data-level="2"] {
+      margin-left: 20px;
+      a,
+      span {
+        font-size: 14px;
+      }
+    }
   }
 }

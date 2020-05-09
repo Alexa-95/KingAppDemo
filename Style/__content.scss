@@ -1,0 +1,256 @@
+.extended-content {
+  width: 100%;
+  // margin-right: 70px;
+  margin-left: 30px;
+
+  .page-frontend-grid{
+
+    &:last-child{
+      margin: 150px 0;
+    }
+  }
+
+  .product-frontend-feature-stock {
+    box-shadow: 0 25px 50px -50px rgba(0, 0, 0, 0.4);
+    .bx-wrapper {
+      position: relative;
+
+      .slider-wrap {
+        .page-frontend-listing-item {
+          // position: relative;
+          .widget-inner {
+            // position: relative;
+            .page-frontend-photo {
+              display: block;
+              width: fit-content;
+              margin: auto;
+            }
+            .page-frontend-cms {
+              width: fit-content;
+              position: absolute;
+              top: 0;
+              > .page-content {
+                text-transform: uppercase;
+                text-align: start;
+                font-size: 25px;
+                font-weight: 500;
+                > h4 {
+                  color: $detailsColorExtra;
+                  font-weight: 700;
+                  font-size: 45px;
+                  padding: 10px 0;
+                  margin: 0;
+                }
+                h1 {
+                  color: $detailsColorExtra;
+                  font-weight: 900;
+                  font-size: 135px;
+                }
+                span {
+                  color: $detailsColorExtra;
+                  font-weight: 900;
+                }
+              }
+            }
+            .page-frontend-external-link {
+              max-width: 300px;
+              width: 100%;
+              font-weight: 500;
+              padding: 15px 0;
+              border: 1px solid $textHeader;
+              position: absolute;
+              bottom: 0;
+              transform: translateY(-100%);
+              a {
+                display: block;
+                font-size: 18px;
+                color: $textHeader;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      .bx-controls {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 50px;
+        margin: auto;
+      }
+    }
+  }
+
+  .Kafel_grid.page-frontend-grid {
+    max-width: 1145px;
+    width: 100%;
+    .page-frontend-listing {
+      .widget-inner.listing {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        .page-frontend-listing-item {
+          position: relative;
+          width: calc((100% - 60px) / 3);
+          height: 390px;
+          overflow: hidden;
+          margin-bottom: 30px;
+
+          &:nth-child(3n + 2) {
+            margin-left: 30px;
+            margin-right: 30px;
+          }
+
+          .image.page-frontend-photo {
+            img {
+              position: absolute;
+              min-width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .page-frontend-external-link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: calc(100% - 20px);
+              width: calc(100% - 20px);
+              color: #fff;
+              font-size: 38px;
+              font-weight: 200;
+              text-transform: uppercase;
+              text-shadow: 2px 2px 3px #58595bad;
+              overflow-wrap: break-word;
+              word-wrap: break-word;
+              transition: color 0.5s linear;
+
+              padding: 10px;
+
+              &:hover {
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-frontend-grid {
+    max-width: 1145px;
+    width: 100%;
+    .tabs-plain {
+      ul.nav.nav-pills {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 50px 0;
+
+        li {
+          a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            padding: 10px 20px;
+            text-align: center;
+            color: $textColorExtra;
+            text-transform: lowercase;
+            font-size: 30px;
+            font-weight: 700;
+
+            &::first-letter {
+              text-transform: uppercase;
+            }
+          }
+          &.active {
+            a {
+              color: $textColor;
+            }
+          }
+        }
+      }
+      .tab-content {
+        .page-frontend-tab-item {
+          // display: none;
+          height: 0;
+          opacity: 0;
+          transition: opacity .2s ease;
+          h3 {
+            font-size: 0;
+          }
+          .bx-controls {
+            width: 100%;
+            bottom: 50%;
+            transform: translateY(-50%);
+            .bx-controls-direction {
+              min-width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              .bx-prev {
+                transform: translateX(-50%);
+              }
+              .bx-next {
+                transform: translateX(50%);
+              }
+            }
+            .bx-pager {
+              display: none;
+            }
+          }
+          &.active {
+            display: block;
+            opacity: 1;
+            height: initial;
+          }
+        }
+      }
+    }
+    .page-frontend-context {
+      
+      text-align: center;
+
+        h4 {  
+            margin: 50px auto;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: normal;
+        }
+
+      .page-frontend-link {
+        margin: 50px auto;
+
+        a {
+          display: block;
+          margin: auto;
+          padding: 15px 80px;
+          width: fit-content;
+          font-size: 18px;
+          font-weight: 500;
+          border: 1px solid $textHeader;
+          transition: all .4s ease;
+
+          &:hover{
+            color: #fff;
+            background-color: $bgrColorExtraLighter;
+          }
+        }
+      }
+    }
+  }
+}

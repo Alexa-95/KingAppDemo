@@ -1,0 +1,59 @@
+.bx-controls {
+  .bx-controls-direction {
+    display: flex;
+    flex-direction: row;
+    
+    
+    .bx-prev,
+    .bx-next {
+      font-size: 0;
+      display: block;
+      width: 34px;
+      height: 34px;
+      border: 1px solid $borderColorDark;
+      border-radius: 5px;
+      &:after {
+        content: "";
+        display: block;
+        background-image: url(../Images/arrow.png);
+        background-size: 12px 8px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+      }
+      &.disabled{
+        display: none;
+      }
+    }
+    .bx-next {
+      &:after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  .bx-pager{
+    display: flex;
+    flex-direction: row;
+    .bx-pager-item {
+        display: flex;
+        flex-direction: row;
+        a {
+          font-size: 0;
+          display: block;
+          &.bx-pager-link {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            margin: 5px 10px;
+            background-color: $pagerDisactive;
+            &.active {
+              background-color: $detailsColor;
+            }
+          }
+        }
+      }
+  }
+  
+}

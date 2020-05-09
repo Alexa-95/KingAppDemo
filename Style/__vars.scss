@@ -6,7 +6,7 @@
 $fontFamily: "Montserrat", sans-serif;
 
 //Colors
-$bgrColor: #000;
+$bgrColor: #fff;
 $bgrColorExtraLighter: #444343;
 $bgrColorExtraDarker: #242323;
 
@@ -19,6 +19,9 @@ $detailsColorExtra: #f70909;
 $detailsColorBasket: #231f20;
 
 $borderColor: #c9c7c8;
+$borderColorDark: #7d7979;
+
+$pagerDisactive: #d3cece;
 
 //Breakpoints for media queries
 $breakpointXS: 0px;
