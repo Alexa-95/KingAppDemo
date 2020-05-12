@@ -1,10 +1,15 @@
 .page-head.page-frontend-page-header {
   background-color: #fff;
   height: 100px;
-  width: 100%;
+  width: calc(100vw - 20px);
   font-size: 16px;
   font-weight: 600;
   color: $textHeader;
+
+  @media (max-width: $breakpointSM) {
+    height: 65px;
+
+  }
   .widget-inner.cols-1 {
     position: relative;
     box-sizing: border-box;
@@ -13,20 +18,106 @@
     align-items: center;
     flex-direction: row;
     height: 100px;
+    width: 100%;
+    
+    @media (max-width: $breakpointSM) {
+      height: 65px;
+      align-items: flex-start;
+    }
 
     .common-frontend-logo {
-      margin-right: auto;
-      margin-left: 25px;
+      margin: auto auto auto 25px;
+      width: 240px;
+      @media (max-width: $breakpointLG) {
+        width: 200px;
+      }
+      @media (max-width: $breakpointMD) {
+        margin: auto auto auto 10px;
+        width: auto;
+        max-width: 150px;
+      }
+      > a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          @media (max-width: $breakpointSM){
+            width: 80%;
+          }
+        }
+      }
     }
 
     .page-frontend-menu {
-      width: 100%;
-      margin-left: 200px;
+      // width: calc(100% - 280px - 25px - 195px - 50px - 390px);
+      width: auto;
+      z-index: 1;
+      
+
+      @media (max-width: $breakpointSM){
+        width: 60px;
+        height: 65px;
+        overflow: hidden;
+        &:hover{
+          overflow: visible;
+        }
+      }
 
       ul {
         display: flex;
+        @media (max-width: $breakpointSM){
+          flex-direction: column;
+          background-color: #fff;
+          width: 120px;          
+
+          &::before{
+            content: '';
+            height: 5px;
+            width: 50px;
+            margin: 15px 0px;
+            padding: 10px 0px;
+            border-top: 5px solid $textHeader;
+            border-bottom: 5px solid $textHeader;
+            background-color: $textHeader;
+            background-clip: content-box;
+          }
+        }
         .__item {
-          padding: 20px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          @media (max-width: $breakpointSM){
+            justify-content: center;
+            background-color: $borderColorDark;
+            &:hover{
+              background-color: $bgrColorExtraLighter;
+            }
+          }
+          > a {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            font-size: 16px;
+            @media (max-width: $breakpointLG) {
+              font-size: 14px;
+              padding: 20px 10px;
+            }
+            @media (max-width: $breakpointMD) {
+              font-size: 12px;
+              padding: 20px 5px;
+            }
+            @media (max-width: $breakpointSM) {
+              &:hover{
+                color: #fff;
+              }
+            }
+          }
         }
       }
     }
@@ -34,18 +125,40 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: auto;
+      width: 135px;
       margin: auto 25px;
+      @media (max-width: $breakpointLG) {
+        margin: auto 15px;
+        width: 120px;
+      }
+      @media (max-width: $breakpointLG) {
+        margin: auto 10px;
+      }
+      @media (max-width: $breakpointSM) {
+        display: none;
+        position: absolute;
+        top: 170px;
+        right: 0;
+        width: 150px;        
+        height: 40px;
+        z-index: 1;
+        margin: 0;
+      }
       > .facebook,
       > .instagram,
       > .youtube {
         display: block;
         height: 28px;
         width: 28px;
-        padding: 0 10px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+        
+        @media (max-width: $breakpointSM){
+          padding: 5px 10px;
+          display: block;
+          margin: auto;
+        }
 
         span {
           font-size: 0px;
@@ -63,7 +176,14 @@
     }
 
     .language-frontend-language-switch {
+      @media (max-width: $breakpointSM){
+        width: 100px;
+      }
       .language-language {
+        @media (max-width: $breakpointSM){
+          margin: auto;
+          width: 100%;
+        }
         > span {
           display: none;
         }
@@ -78,29 +198,99 @@
           outline: none;
           font-size: 16px;
           font-weight: 600;
+          @media (max-width: $breakpointMD) {
+            width: 40px;
+          }
+          @media (max-width: $breakpointSM) {
+            width: 100%;
+          }
 
-          option{
-             background-color: $bgrColorExtraLighter;
-             color: #fff;
+          option {
+            background-color: $bgrColorExtraLighter;
+            color: #fff;
           }
         }
       }
+      @media (max-width: $breakpointSM){
+        display: none;
+        position: absolute;
+        top: 250px;
+        right: 0;
+        width: 60px;
+        z-index: 1;
+        margin: auto;
+      }
     }
     .page-frontend-grid {
+      overflow: hidden;
+      &:hover{
+        overflow: visible;
+      }
       .account-frontend-logged-user {
-        margin: auto 45px;
-        width: max-content;
+        width: 270px;
+        text-align: center;
+        margin: 0 20px;
+        @media (max-width: $breakpointLG) {
+          margin: auto;
+        }
+        @media (max-width: $breakpointMD + 100px) {
+          display: flex;
+          flex-direction: column;
+          width: 160px;
+        }
+        @media (max-width: $breakpointMD) {
+          width: 120px;
+        }
+        @media (max-width: $breakpointSM) {
+          background-color: #fff;
+          z-index: 1;
+          width: 60px;
+          &::before{
+            content: '';
+            background-image: url('../Images/LoginMobile.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: initial;
+            height: 65px;
+          }
+        }
+        
         .linkToLogin,
         .linkToRegister {
           padding: 10px;
           font-size: 16px;
           font-weight: 600;
           color: $textHeader;
+          text-transform: uppercase;
+          @media (max-width: $breakpointLG) {
+            font-size: 14px;
+          }
+          @media (max-width: $breakpointMD) {
+            font-size: 12px;
+          }
+          @media (max-width: $breakpointSM) {
+            padding: 20px 10px;
+            width: 100px;
+            transform: translateX(-50%);
+            background-color: $borderColorDark;
+
+            &:hover{
+              background-color: $bgrColorExtraLighter;
+              color: #fff;
+            }
+          }
+
         }
-        &:after {
-          content: "/";
-          position: absolute;
-          left: 50%;
+        > a {
+          &:first-child {
+            @media (min-width: $breakpointMD + 100px) {
+              &::after {
+                content: "/";
+                position: absolute;
+                margin-left: 5px;
+              }
+            }
+          }
         }
       }
       .basket-frontend-bill {
@@ -112,33 +302,39 @@
         background-position: center;
         background-repeat: no-repeat;
 
+        @media (max-width: $breakpointSM) {
+          width: 55px;
+        }
+
         &:after {
-          content: attr(data-type);
-          position: absolute;
-          right: 20%;
-          top: 20%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 29px;
-          height: 29px;
-          border-radius: 100%;
-          background-color: $detailsColor;
-          color: #fff;
-          font-size: 12px;
+          @media (min-width: $breakpointSM) {
+            height: 65px;
+            content: attr(data-type);
+            position: absolute;
+            right: 20%;
+            top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 29px;
+            height: 29px;
+            border-radius: 100%;
+            background-color: $detailsColor;
+            color: #fff;
+            font-size: 12px;
+          }
         }
       }
     }
   }
-
-  //TODO - O CHUJ W TYM CHODZI?
-  .basket-container-top.page-frontend-grid {
-    display: none;
-  }
+  // @media (max-width: $breakpointSM) {
+  //     .page-frontend-menu:hover ~ .social-frontend-contact{
+  //       opacity: 1;
+  //       transition: .2s ease-out 1s;
+  //     }
+  //     .page-frontend-menu:hover ~ .language-frontend-language-switch{
+  //       opacity: 1;
+  //       transition: .2s ease-out 1s;
+  //     }
+  // }
 }
-
-//
-// MOBILE
-//
-
-

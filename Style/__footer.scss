@@ -5,32 +5,44 @@
   .widget-inner {
     width: 100%;
     .page-frontend-grid {
-        max-width: 1145px;
-        width: 100%;
-        margin: auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
+      max-width: 1145px;
+      width: calc(75vw - 30px);
+      margin: auto auto auto 25vw;
+      padding: 50px 0;
 
-      &:nth-child(-n+2){
-          border-bottom: 1px solid #fff;
-        }
+      @media (max-width: $breakpointSM) {
+        margin: auto 30px;
+        width: auto;
+      }
+
+      &:nth-child(-n + 2) {
+        border-bottom: 1px solid #fff;
+      }
 
       .page-menu {
         display: block;
         margin: auto;
-        // padding-top: 25px;
-        // padding-bottom: 50px;
         > ul {
           display: flex;
+          justify-content: space-around;
           width: 100%;
           > li.__item {
-            width: 25%;
+            @media (max-width: $breakpointSM) {
+              margin-bottom: 20px;
+            }
             a {
               color: #fff;
               font-size: 14px;
               font-weight: 500;
               line-height: 24px;
+              @media (min-width: $breakpointSM) and (max-width: $breakpointMD) {
+                font-size: 10px;
+                line-height: normal;
+              }
             }
+          }
+          @media (max-width: $breakpointSM) {
+            flex-direction: column;
           }
         }
       }
@@ -40,6 +52,11 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+
+          @media (max-width: $breakpointSM) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
 
           .client-frontend-owner-info {
             color: #fff;
@@ -57,7 +74,7 @@
                     font-weight: 500;
                     line-height: 34px;
 
-                    span.display-name{
+                    span.display-name {
                       display: block;
                       padding-bottom: 10px;
                     }
@@ -75,6 +92,13 @@
             flex-direction: row;
             justify-content: flex-end;
             width: auto;
+
+            @media (max-width: $breakpointSM) {
+              width: 100%;
+              justify-content: space-between;
+              margin-top: 50px;
+            }
+
             > .facebook,
             > .instagram,
             > .youtube {
@@ -102,39 +126,48 @@
           }
         }
       }
-      &.newsletter_grid {          
+      &.newsletter_grid {
         .form-container {
-            &.is-validated{
-                > .form-group {
-                    .form-text{
-                        display: block;
-                        margin: 20px 0;
-                        .text_after_submit{
-                            color: #fff;
-                            font-size: 14px;
-                            line-height: 24px;
-                            text-align: right;
-                        }
-                    }   
+          &.is-validated {
+            > .form-group {
+              .form-text {
+                display: block;
+                margin: 20px 0;
+                .text_after_submit {
+                  color: #fff;
+                  font-size: 14px;
+                  line-height: 24px;
+                  text-align: right;
+                }
+              }
             }
-            }
+          }
           > .form-group {
             max-width: 30%;
+            @media (max-width: $breakpointLG) {
+              max-width: 50%;
+            }
+            @media (max-width: $breakpointSM) {
+              max-width: 100%;
+            }
             form {
-                button[type=submit] {
-                  cursor: pointer;
-                    display: block;
-                    background-color: $detailsColor;
-                    color: #fff;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px;
-                    padding: 10px 20px;
-                    margin: 30px 0 10px auto;
-                    font-size: 18px;
-                    font-weight: 500;
+              button[type="submit"] {
+                cursor: pointer;
+                display: block;
+                background-color: $detailsColor;
+                color: #fff;
+                outline: none;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin: 30px 0 10px auto;
+                font-size: 18px;
+                font-weight: 500;
 
+                @media (max-width: $breakpointSM) {
+                  width: 100%;
                 }
+              }
               .form-group {
                 &.newsletter_email {
                   > .form-control {
@@ -145,7 +178,7 @@
                     outline: none;
 
                     & + label {
-                        font-size: 0;
+                      font-size: 0;
                       display: block;
                       color: #fff;
                       padding: 5px;
@@ -153,7 +186,7 @@
                   }
                 }
                 &.newsletter_agreeNewsletter {
-                    margin: 10px auto;
+                  margin: 10px auto;
                   input[type="checkbox"] {
                     float: left;
                     position: relative;
@@ -200,52 +233,66 @@
                   }
                 }
               }
-              .form-text{
-                  display: none;
-              }              
-
+              .form-text {
+                display: none;
+              }
             }
           }
         }
       }
-    &:last-child{
+      &:last-child {
         max-width: none;
         background-color: $bgrColorExtraDarker;
         padding-top: 30px;
         padding-bottom: 30px;
-        .common-frontend{
-            max-width: 1145px;
-            width: 100%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-            font-size: 16px;
-            >p{
-                span{
-                    padding: 0 5px;
-                }
-                &.page-foot__logo{
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    span, a{
-                        padding: 0 5px;
-                    }
-                    
-                    >a{
-                        display: block;
-                        img{
-                            display: block;
-                            height: 40px;
-                        }
-                    }
-                }
+        width: 100%;
+        margin: 0;
+        .common-frontend {
+          max-width: 1145px;
+          width: 100%;
+          margin: auto;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          color: #fff;
+          font-size: 16px;
+          @media (max-width: $breakpointSM) {
+            flex-direction: column;
+            justify-content: center;
+          }
+          > p {
+            @media (max-width: $breakpointSM) {
+              margin: 10px 0;
+              width: 90%;
+              text-align: center;
             }
+            span {
+              padding: 0 5px;
+            }
+            &.page-foot__logo {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              @media (max-width: $breakpointSM) {
+                justify-content: center;
+              }
+
+              span,
+              a {
+                padding: 0 5px;
+              }
+
+              > a {
+                display: block;
+                img {
+                  display: block;
+                  height: 40px;
+                }
+              }
+            }
+          }
         }
-    }
+      }
     }
   }
 }
