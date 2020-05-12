@@ -2048,13 +2048,19 @@ body .wrapper .extended {
   z-index: 100;
 }
 
-.page-frontend-cookie a.policy {
+.page-frontend-cookie .inner > div {
+  font-size: 14px;
+  line-height: normal;
+  padding: 20px 0;
+}
+
+.page-frontend-cookie .inner a.policy {
   font-size: 16px;
   font-weight: 500;
   text-decoration: underline;
 }
 
-.page-frontend-cookie button.common-button {
+.page-frontend-cookie .inner button.common-button {
   background-color: #fff;
   border: none;
   outline: none;
@@ -2068,7 +2074,7 @@ body .wrapper .extended {
           transform: translateX(-100%);
 }
 
-.page-frontend-cookie button.common-button:hover {
+.page-frontend-cookie .inner button.common-button:hover {
   text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */
